@@ -7,7 +7,9 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <div class="page-title-left"></div>
+                    <div class="page-title-left">
+                        <a href="{{ route('generalledger.create') }}" type="button" class="btn btn-primary waves-effect btn-label waves-light"><i class="mdi mdi-plus-box label-icon"></i> Add New Transaction</a>
+                    </div>
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">Accounting</a></li>
@@ -142,7 +144,7 @@
                                     <th class="align-middle text-center">
                                         <input type="checkbox" id="checkAllRows">
                                     </th>
-                                    <th class="align-middle text-center">No.</th>
+                                    {{-- <th class="align-middle text-center">No.</th> --}}
                                     <th class="align-middle text-center">Ref. Number</th>
                                     <th class="align-middle text-center">Date</th>
                                     <th class="align-middle text-center">Account Code</th>
@@ -256,15 +258,15 @@
                     orderable: false,
                     searchable: false
                 },
-                {
-                data: null,
-                    render: function(data, type, row, meta) {
-                        return meta.row + meta.settings._iDisplayStart + 1;
-                    },
-                    orderable: false,
-                    searchable: false,
-                    className: 'align-middle text-center',
-                },
+                // {
+                // data: null,
+                //     render: function(data, type, row, meta) {
+                //         return meta.row + meta.settings._iDisplayStart + 1;
+                //     },
+                //     orderable: false,
+                //     searchable: false,
+                //     className: 'align-middle text-center',
+                // },
                 {
                     data: 'ref_number',
                     name: 'ref_number',
@@ -319,9 +321,9 @@
                     render: function(data, type, row) {
                         var html
                         if(row.debit != null){
-                            html = '<span class="badge bg-info text-white">Debit</span>';
+                            html = '<span class="badge bg-success text-white"><span class="mdi mdi-plus-circle"></span> | Debit</span>';
                         } else {
-                            html = '<span class="badge bg-info text-white">Kredit</span>';
+                            html = '<span class="badge bg-danger text-white"><span class="mdi mdi-minus-circle"></span> | Kredit</span>';
                         } 
                         return html;
                     },

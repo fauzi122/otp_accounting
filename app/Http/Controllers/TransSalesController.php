@@ -150,6 +150,7 @@ class TransSalesController extends Controller
     
                         GeneralLedger::create([
                             'ref_number' => $refNumber,
+                            'date_transaction' => $request->transaction_date,
                             'id_account_code' => $item['account_code'],
                             'debit' => $debit,
                             'kredit' => $kredit,
@@ -211,6 +212,7 @@ class TransSalesController extends Controller
         } else {
             $general_ledgers = [];
         }
+        // dd($general_ledger);
 
         $sales = SalesInvoice::select('id', 'invoice_number')->get();
         $accountcodes = MstAccountCodes::get();
@@ -306,6 +308,7 @@ class TransSalesController extends Controller
                                 }
                                 GeneralLedger::create([
                                     'ref_number' => $databefore->ref_number,
+                                    'date_transaction' => $request->transaction_date,
                                     'id_account_code' => $item['account_code'],
                                     'debit' => $debit,
                                     'kredit' => $kredit,
