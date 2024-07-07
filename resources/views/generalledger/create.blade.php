@@ -111,8 +111,8 @@
                                                             <td>
                                                                 <select class="form-select js-example-basic-single addpayment" style="width: 100%" name="addmore[0][type]" required>
                                                                     <option value="">- Select Type -</option>
-                                                                    <option value="Debit">Debit</option>
-                                                                    <option value="Kredit">Kredit</option>
+                                                                    <option value="D">Debit</option>
+                                                                    <option value="K">Kredit</option>
                                                                 </select>
                                                             </td>
                                                             <td style="text-align:center"><button type="button" name="add" id="adds" class="btn btn-success"><i class="fas fa-plus"></i></button></td>
@@ -176,9 +176,9 @@
             let nominal = parseCurrency($(this).find('input[name*="[nominal]"]').val());
             let type = $(this).find('select[name*="[type]"]').val();
 
-            if (type === "Debit") {
+            if (type === "D") {
                 debitTotal += nominal;
-            } else if (type === "Kredit") {
+            } else if (type === "K") {
                 kreditTotal += nominal;
             }
         });
@@ -251,8 +251,8 @@
                 <td>
                     <select class="form-select js-example-basic-single addpayment" style="width: 100%" name="addmore[`+i+`][type]" required>
                         <option value="">- Select Type -</option>
-                        <option value="Debit">Debit</option>
-                        <option value="Kredit">Kredit</option>
+                        <option value="D">Debit</option>
+                        <option value="K">Kredit</option>
                     </select>
                 </td>
                 <td style="text-align:center">
