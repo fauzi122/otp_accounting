@@ -205,7 +205,7 @@
                                         <div class="card-header text-center">
                                             <h6 class="mb-0">
                                                 Transaction
-                                                <i class="mdi mdi-information-outline" data-bs-toggle="tooltip" data-bs-placement="top" title="Aturan Transaksi: Total Debit harus sama dengan Total Kredit, serta sama dengan Total Nilai Jual + PPN"></i>
+                                                <i class="mdi mdi-information-outline" data-bs-toggle="tooltip" data-bs-placement="top" title="Aturan Transaksi: Total Debit harus sama dengan Total Kredit, serta sama dengan Total (Nilai Purchase + PPN) - Diskon"></i>
                                             </h6>
                                         </div>
                                         <div class="card-body">
