@@ -165,7 +165,8 @@ class TransCashBookController extends Controller
         $maxSeq = TransCashBook::where('type', $type)
             ->whereMonth('date_invoice', $month)
             ->whereYear('date_invoice', $Year)
-            ->max('seq');
+            ->selectRaw('MAX(CAST(seq AS UNSIGNED)) as max_seq')
+            ->value('max_seq');
         $seq = ($maxSeq ?? 0) + 1;
         $seqFormatted = str_pad($seq, 4, '0', STR_PAD_LEFT);
         
